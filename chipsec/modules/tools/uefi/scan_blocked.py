@@ -81,6 +81,12 @@ class scan_blocked(BaseModule):
         return check_match_criteria(efi_module, self.efi_blockedlist, self.logger, self.cpuid)
 
     def check_blockedlist(self):
+        """
+        Actually performs the unique goal of this Chipsec module: using the
+        blocklist to scan against the given image.
+
+        Returns a ModuleResult
+        """
         res = ModuleResult.PASSED
 
         self.logger.log(f'[*] Searching for EFI binaries that match criteria from \'{self.cfg_name}\':')
