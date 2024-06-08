@@ -29,17 +29,17 @@ import importlib
 import os
 import sys
 from time import time
-
 from typing import Sequence, Optional, Dict, Any
+
+from chipsec.chipset import cs
 from chipsec.helper.oshelper import helper
-from chipsec.library.logger import logger, level
 from chipsec.library.banner import print_banner, print_banner_properties
 from chipsec.library.exceptions import UnknownChipsetError
+from chipsec.library.logger import logger, level
 from chipsec.library.options import Options
-from chipsec.testcase import ExitCode
-from chipsec.chipset import cs
 from chipsec.library.file import get_main_dir
 from chipsec.library.defines import get_version, get_message, os_version
+from chipsec.testcase import ExitCode
 
 CMD_OPTS_WIDTH = {'byte': 0x1, 'word': 0x2, 'dword': 0x4}
 
